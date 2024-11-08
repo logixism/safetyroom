@@ -1,6 +1,6 @@
 import { Arrow, ArrowProps } from "@/components/Arrow";
 import { PulsingCircle, PulsingCircleProps } from "@/components/PulsingCircle";
-import { Images } from "@/components/Images";
+import Images from "@/components/Images";
 
 const arrows: ArrowProps[] = [
   {

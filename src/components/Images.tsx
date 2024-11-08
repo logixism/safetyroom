@@ -9,7 +9,7 @@ import Entrance_Lowres from "/public/assets/hires/rooms/entrance.png";
 import LeftSide from "/public/assets/hires/rooms/left_side.png";
 import LeftSide_Lowres from "/public/assets/hires/rooms/left_side.png";
 
-export const Images = ({ room }: { room: string }) => {
+const Images = ({ room }: { room: string }) => {
 
   let lowres_image: any;
   let image: any;
@@ -40,3 +40,5 @@ export const Images = ({ room }: { room: string }) => {
     />
   </>)
 };
+
+export default Images;
