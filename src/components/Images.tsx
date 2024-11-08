@@ -18,9 +18,11 @@ const Images = ({ room }: { room: string }) => {
     case "entrance":
       lowres_image = Entrance_Lowres;
       image = Entrance;
+      break;
     case "left_side":
       lowres_image = LeftSide_Lowres;
       image = LeftSide;
+      break;
   }
 
   const [isLoaded, setIsLoaded] = useState(false);
