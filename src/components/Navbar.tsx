@@ -16,7 +16,7 @@ export const Navbar = ({ hasBorderBottom }: { hasBorderBottom?: boolean }) => {
         <Link href="/products">Shop All</Link>
       </div>
       <Link href="/" className="center -ml-72">
-        Drake Unrelated
+        Safety Room
       </Link>
       <div className="right">Cart ( 0 ) </div>
     </nav>

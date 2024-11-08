@@ -1,4 +1,4 @@
-# Drake Unrelated
+# Safety Room
 
 My attempt at recreating https://drakerelated.com/ using NextJS and TailwindCSS.
 
