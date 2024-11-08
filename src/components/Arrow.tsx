@@ -35,11 +35,12 @@ export const Arrow = ({
     <>
       <Link
         href={href}
-        className={`absolute group text-white border border-white rounded-full flex ${
+        className={`absolute group text-white border border-white bg-black/5 backdrop-blur-sm rounded-full flex ${
           direction === "right" ? "flex-row-reverse" : "pr-2"
-        } items-center px-1 w-6 h-6 transition-all duration-500 ease-in-out`}
+        } items-center px-1 w-12 h-12 transition-all duration-700 ease-in-out`}
         style={{
-          width: isHovered ? `${width}px` : "",
+          width: 'fit-content',
+          maxWidth: isHovered ? `300px` : '48px',
           left: direction === "left" ? `${directionPercentage}%` : "",
           right: direction === "right" ? `${directionPercentage}%` : "",
           top: `${top}%`,
@@ -53,7 +54,7 @@ export const Arrow = ({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="w-4 h-4"
+              className="w-9 h-5"
             >
               <path
                 fillRule="evenodd"
@@ -66,7 +67,7 @@ export const Arrow = ({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="w-4 h-4"
+              className="w-9 h-5"
             >
               <path
                 fillRule="evenodd"
@@ -78,7 +79,7 @@ export const Arrow = ({
         </span>
         <span
           ref={textRef}
-          className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out font-bold"
+          className={`whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out font-bold ${direction === "left" ? "mr-1" : "ml-1"}`}
         >
           {text}
         </span>

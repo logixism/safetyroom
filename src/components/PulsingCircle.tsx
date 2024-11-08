@@ -1,30 +1,54 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 export interface PulsingCircleProps {
-  href: string;
+  image: string;
   text: string;
   top: number;
   left: number;
+  radius?: number;
 }
 
 export const PulsingCircle = ({
-  href,
+  image,
   text,
   top,
   left,
+  radius
 }: PulsingCircleProps) => {
+  const [showImage, setShowImage] = useState(false);
+
+  const handleClick = () => {
+    setShowImage(true);
+  };
+
+  const handleClose = () => {
+    setShowImage(false);
+  };
+
   return (
     <>
       <div
         className="group absolute cursor-pointer flex flex-col items-center justify-center"
         style={{ left: `${left}%`, top: `${top}%` }}
+        onClick={handleClick}
       >
-        <div className="circle w-4 h-4 rounded-full bg-white relative group-hover:opacity-0 group-hover:-z-10">
-          <span className="block absolute h-full w-full rounded-full bg-white/5 border border-white opacity-75 animate-ping-xl group-hover:animate-none"></span>
+        <div className={`
+          circle 
+          ${radius ? `w-${radius} h-${radius}` : 'w-8 h-8'}
+          rounded-full 
+          bg-white/75 
+          backdrop-blur-sm 
+          relative 
+          group-hover:opacity-0 
+          group-hover:-z-10
+        `}>
+          <span className="block absolute h-full w-full rounded-full bg-white/5 border border-white opacity-75 animate-ping-xl"></span>
         </div>
-        <Link
-          href={href}
+        <div
           className="link flex flex-col items-center justify-center opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:-mt-4 transition-all duration-500 ease-in-out"
+          style={{ position: 'absolute', top: '100%' }}
         >
           <span className="-mb-1">
             <svg
@@ -38,11 +62,18 @@ export const PulsingCircle = ({
               <path d="M24 22h-24l12-20z" />
             </svg>
           </span>
-          <div className="bg-white px-4 py-1 rounded-full font-bold">
-            <span className="text">{text}</span>
+          <div className="bg-white px-4 py-1 rounded-lg font-bold">
+            <span className="text text-nowrap">{text}</span>
           </div>
-        </Link>
+        </div>
+      </div>
+      <div
+          className={`z-30 fixed top-0 left-0 w-full h-full bg-white/10 flex items-center justify-center backdrop-blur-md transition-opacity duration-200 ${showImage ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          onClick={handleClose}
+        >
+          <img src={image} alt={text} className="max-w-full max-h-full rounded-2xl" />
       </div>
     </>
   );
 };
+

@@ -5,17 +5,12 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/rooms/front",
+        destination: "/rooms/entrance",
         permanent: true,
       },
       {
         source: "/rooms",
-        destination: "/rooms/front",
-        permanent: true,
-      },
-      {
-        source: "/products",
-        destination: "/products/titles-ruin-everything",
+        destination: "/rooms/entrance",
         permanent: true,
       },
     ];
