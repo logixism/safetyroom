@@ -2,13 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Images from "@/components/Images";
 
 export default function Home() {
   const router = useRouter();
 
   return (
     <>
-      <div className="relative h-screen w-screen">
+      <span className="blur-md w-full h-full scale-105 absolute border-none">
+        <Images room="left_side" />
+      </span>
+      <div className="relative h-screen w-screen top-16 ">
         <Image
           src="/assets/hires/start.png"
           alt="safety room"
