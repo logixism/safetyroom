@@ -47,14 +47,14 @@ export const PulsingCircle = ({
           circle 
           ${radius ? `w-${radius} h-${radius}` : "w-8 h-8"}
           rounded-full 
-          bg-white/75 
+          bg-white
           backdrop-blur-sm 
           relative 
           group-hover:opacity-0 
           group-hover:-z-10
         `}
         >
-          <span className="block absolute h-full w-full rounded-full bg-white/5 border border-white opacity-75 animate-ping-xl"></span>
+          <span className="block absolute h-full w-full rounded-full bg-white/10 border border-white opacity-75 animate-ping-xl"></span>
         </div>
         <div
           className="link flex flex-col items-center justify-center opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:-mt-4 transition-all duration-500 ease-in-out"

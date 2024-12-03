@@ -25,8 +25,13 @@ const PdfView = ({ file }: { file: string }) => {
   return (
     <div className="w-auto mx-auto">
       <div>
-        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document
+          file={file}
+          onLoadSuccess={onDocumentLoadSuccess}
+          loading=<h1>Завантаження...</h1>
+        >
           <Page
+            loading=<h1>Завантаження...</h1>
             pageNumber={pageNumber}
             height={900}
             renderAnnotationLayer={false}
