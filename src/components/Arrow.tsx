@@ -25,7 +25,7 @@ export const Arrow = ({
     <>
       <Link
         href={href}
-        className={`absolute group text-white border border-white bg-black/5 backdrop-blur-sm rounded-full flex ${
+        className={`absolute group text-white border border-white bg-black/5 backdrop-blur-sm rounded-full flex z-30 ${
           direction === "right" ? "flex-row-reverse" : "pr-2"
         } items-center px-1 w-12 h-12 transition-all duration-700 ease-in-out`}
         style={{

@@ -30,7 +30,7 @@ const Images = ({ room }: { room: string }) => {
       <Image
         src={lowres_image}
         alt={room}
-        className={`w-full h-full absolute top-0 left-0 pointer-events-none blur-md transition-all duration-900 ease-in-out z-10 ${
+        className={`w-full h-full absolute top-0 left-0 pointer-events-none blur-md transition-all duration-900 ease-in-out z-50 ${
           isLoaded ? "opacity-0 blur-none" : "opacity-100"
         }`}
       />

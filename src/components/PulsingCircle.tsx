@@ -35,7 +35,7 @@ export const PulsingCircle = ({
   return (
     <>
       <div
-        className="group absolute cursor-pointer flex flex-col items-center justify-center"
+        className="group absolute cursor-pointer flex flex-col items-center justify-center z-20"
         style={{ left: `${left}%`, top: `${top}%` }}
         onClick={() => {
           handleClick();
@@ -85,7 +85,7 @@ export const PulsingCircle = ({
       >
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
           <div
-            className="bg-white p-4 rounded-2xl max-w-5xl w-min-content"
+            className="bg-white p-4 rounded-2xl max-w-5xl w-min-content max-h-[95vh] overflow-y-scroll"
             onClick={(e) => e.stopPropagation()}
           >
             {content}
