@@ -261,54 +261,81 @@ const FrontPage = () => {
   return (
     <>
       <Images room="entrance" />
-      <Image
-        src="/assets/hires/signs/shelf_overload.png"
-        alt=""
-        width={120}
-        height={0}
+      <div
         style={{
           zIndex: 11,
           position: "absolute",
-          top: "45%",
-          left: "7.8%",
+          top: "45.7%",
+          left: "7.9%",
+          width: "6.2%",
         }}
-      />
-      <Image
-        src="/assets/hires/signs/air_alert.png"
-        alt=""
-        width={120}
-        height={0}
+      >
+        <Image
+          src="/assets/hires/signs/shelf_overload.png"
+          alt=""
+          layout="responsive"
+          width={0}
+          height={0}
+        />
+      </div>
+      <div
         style={{
           zIndex: 11,
           position: "absolute",
           top: "40%",
           left: "58.8%",
+          width: "6.2%",
         }}
-      />
-      <Image
-        src="/assets/hires/signs/road_safety.png"
-        alt=""
-        width={120}
-        height={0}
+      >
+        <Image
+          src="/assets/hires/signs/air_alert.png"
+          alt=""
+          layout="responsive"
+          width={0}
+          height={0}
+        />
+      </div>
+      <div
         style={{
           zIndex: 11,
           position: "absolute",
           top: "40%",
-          left: "66%",
+          left: "65.8%",
+          width: "6.2%",
         }}
-      />
-      <Image
-        src="/assets/hires/signs/cyberbullying.png"
-        alt=""
-        width={170}
-        height={0}
+      >
+        <Image
+          src="/assets/hires/signs/road_safety.png"
+          alt=""
+          layout="responsive"
+          width={0}
+          height={0}
+        />
+      </div>
+      <div
         style={{
           zIndex: 11,
           position: "absolute",
           top: "40%",
-          left: "73%",
+          left: "67.3%",
+          width: "8.2%",
         }}
-      />
+      >
+        <Image
+          src="/assets/hires/signs/cyberbullying.png"
+          alt=""
+          layout="responsive"
+          width={0}
+          height={0}
+          style={{
+            zIndex: 11,
+            position: "absolute",
+            top: "40%",
+            left: "73%",
+          }}
+        />
+      </div>
+
       <div className="absolute w-full h-full top-0 left-0">
         {arrows.map((arrow, i) => (
           <Arrow key={i} {...arrow} />
