@@ -85,7 +85,7 @@ export const PulsingCircle = ({
       >
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
           <div
-            className="bg-white p-4 rounded-2xl max-w-5xl w-min-content max-h-[95vh] overflow-y-scroll"
+            className="bg-white p-4 rounded-2xl max-w-5xl min-w-fit max-h-[95vh] overflow-y-scroll"
             onClick={(e) => e.stopPropagation()}
           >
             {content}

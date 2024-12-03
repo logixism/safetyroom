@@ -9,6 +9,7 @@ import PdfView from "@/components/PdfView";
 let fire_audio: HTMLAudioElement | undefined = undefined;
 let pdf_fire_safety = <PdfView file="../assets/files/fire_safety.pdf" />;
 let pdf_life_safety = <PdfView file="../assets/files/life_safety.pdf" />;
+let pdf_road_safety = <PdfView file="../assets/files/road_safety.pdf" />;
 
 const arrows: ArrowProps[] = [
   {
@@ -227,6 +228,33 @@ const circles: PulsingCircleProps[] = [
     left: 61.4,
     radius: 5,
   },
+  {
+    content: <>{pdf_road_safety}</>,
+    text: "Безпека дорожнього руху",
+    top: 48.7,
+    left: 68.8,
+    radius: 5,
+  },
+  {
+    content: (
+      <>
+        <div>
+          {[...Array(2).keys()].map((i) => (
+            <img
+              key={i}
+              src={`../assets/hires/signs/cyberbullying_${i + 1}.png`}
+              alt={`Буклет ${i + 1}`}
+              className="w-full"
+            />
+          ))}
+        </div>
+      </>
+    ),
+    text: "Кібербуллінг",
+    top: 45,
+    left: 77,
+    radius: 5,
+  },
 ];
 
 const FrontPage = () => {
@@ -255,6 +283,30 @@ const FrontPage = () => {
           position: "absolute",
           top: "40%",
           left: "58.8%",
+        }}
+      />
+      <Image
+        src="/assets/hires/signs/road_safety.png"
+        alt=""
+        width={120}
+        height={0}
+        style={{
+          zIndex: 11,
+          position: "absolute",
+          top: "40%",
+          left: "66%",
+        }}
+      />
+      <Image
+        src="/assets/hires/signs/cyberbullying.png"
+        alt=""
+        width={170}
+        height={0}
+        style={{
+          zIndex: 11,
+          position: "absolute",
+          top: "40%",
+          left: "73%",
         }}
       />
       <div className="absolute w-full h-full top-0 left-0">

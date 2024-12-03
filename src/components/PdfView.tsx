@@ -30,16 +30,21 @@ const PdfView = ({ file }: { file: string }) => {
           onLoadSuccess={onDocumentLoadSuccess}
           loading=<h1>Завантаження...</h1>
         >
-          <Page
-            loading=<h1>Завантаження...</h1>
-            pageNumber={pageNumber}
-            height={900}
-            renderAnnotationLayer={false}
-            renderTextLayer={false}
-          />
+          <div className="space-y-2">
+            {[...Array(numPages || 1)].map((_, i) => (
+              <Page
+                loading={<h1>Завантаження...</h1>}
+                key={i + 1}
+                pageNumber={i + 1}
+                height={900}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+              />
+            ))}
+          </div>
         </Document>
       </div>
-      <div className="flex justify-center mt-3">
+      {/* <div className="flex justify-center mt-3">
         <div className="flex items-center space-x-4 bg-slate-200 max-w-fit px-2 py-1 rounded-xl">
           <button
             onClick={goToPrevPage}
@@ -59,7 +64,7 @@ const PdfView = ({ file }: { file: string }) => {
             &rarr;
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
