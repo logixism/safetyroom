@@ -5,6 +5,9 @@ import { PulsingCircle, PulsingCircleProps } from "@/components/PulsingCircle";
 import Images from "@/components/Images";
 import PdfView from "@/components/PdfView";
 
+let fire_audio: HTMLAudioElement | undefined = undefined;
+let pdf_fire_safety = <PdfView file="../assets/files/fire_safety.pdf" />;
+
 const arrows: ArrowProps[] = [
   {
     direction: "left",
@@ -56,12 +59,6 @@ const circles: PulsingCircleProps[] = [
         <img src="../assets/hires/signs/fire_car.png" alt="Пожежна машина" />
       </>
     ),
-    onClick: () => {
-      const audio = new Audio("../assets/sounds/fire_alarm.mp3");
-      audio.play().then(() => {
-        audio.remove();
-      });
-    },
     text: "Пожежна машина",
     top: 45,
     left: 27,
@@ -69,9 +66,47 @@ const circles: PulsingCircleProps[] = [
   {
     content: (
       <>
-        <PdfView file="../assets/files/fire_safety.pdf" />
+        <img
+          src="../assets/hires/signs/fire_car_inside.png"
+          alt="Пожежна машина"
+        />
       </>
     ),
+    text: "Пожежна машина",
+    top: 39,
+    left: 45,
+    radius: 5,
+  },
+  {
+    content: (
+      <>
+        <img
+          src="../assets/hires/signs/fire_car_signal.png"
+          alt="Пожежна машина"
+        />
+      </>
+    ),
+    onClick: () => {
+      if (!fire_audio) {
+        fire_audio = new Audio("../assets/sounds/fire_alarm.mp3");
+        fire_audio.volume = 0.3;
+      }
+      fire_audio.play();
+    },
+    onClose: () => {
+      if (!fire_audio) {
+        return;
+      }
+      fire_audio.pause();
+      fire_audio.currentTime = 0;
+    },
+    text: "Пожежна машина",
+    top: 32,
+    left: 45,
+    radius: 5,
+  },
+  {
+    content: <>{pdf_fire_safety}</>,
     text: "Буклет",
     top: 57,
     left: 22,

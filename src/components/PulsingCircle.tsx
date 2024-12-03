@@ -4,6 +4,7 @@ import { useState, ReactNode } from "react";
 
 export interface PulsingCircleProps {
   onClick?: () => void;
+  onClose?: () => void;
   content: ReactNode;
   text: string;
   top: number;
@@ -13,6 +14,7 @@ export interface PulsingCircleProps {
 
 export const PulsingCircle = ({
   onClick,
+  onClose,
   content,
   text,
   top,
@@ -27,6 +29,7 @@ export const PulsingCircle = ({
 
   const handleClose = () => {
     setShowImage(false);
+    onClose?.();
   };
 
   return (
@@ -86,6 +89,7 @@ export const PulsingCircle = ({
             onClick={(e) => e.stopPropagation()}
           >
             {content}
+            {/* {showImage && content} */}
           </div>
         </div>
       </div>

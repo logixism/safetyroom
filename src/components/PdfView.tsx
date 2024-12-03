@@ -24,23 +24,35 @@ const PdfView = ({ file }: { file: string }) => {
 
   return (
     <div className="w-auto mx-auto">
-      <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page
-          pageNumber={pageNumber}
-          height={900}
-          renderAnnotationLayer={false}
-        />
-      </Document>
-      <div className="flex justify-center space-x-4 mt-2">
-        <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-          &larr;
-        </button>
-        <p>
-          {pageNumber}/{numPages}
-        </p>
-        <button onClick={goToNextPage} disabled={pageNumber >= (numPages || 1)}>
-          &rarr;
-        </button>
+      <div>
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page
+            pageNumber={pageNumber}
+            height={900}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </div>
+      <div className="flex justify-center mt-3">
+        <div className="flex items-center space-x-4 bg-slate-200 max-w-fit px-2 py-1 rounded-xl">
+          <button
+            onClick={goToPrevPage}
+            disabled={pageNumber <= 1}
+            className="w-8 h-8 text-xl"
+          >
+            &larr;
+          </button>
+          <p className="font-bold">
+            Сторінка {pageNumber} з {numPages}
+          </p>
+          <button
+            onClick={goToNextPage}
+            disabled={pageNumber >= (numPages || 1)}
+            className="w-8 h-8 text-xl"
+          >
+            &rarr;
+          </button>
+        </div>
       </div>
     </div>
   );
