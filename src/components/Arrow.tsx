@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export interface ArrowProps {
   direction: "left" | "right";
@@ -19,17 +19,7 @@ export const Arrow = ({
   directionPercentage,
 }: ArrowProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
-  const [width, setWidth] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    const textEl = textRef.current;
-
-    if (textEl) {
-      const textWidth = textEl.offsetWidth + 31;
-      setWidth(textWidth);
-    }
-  }, []);
 
   return (
     <>
@@ -39,8 +29,8 @@ export const Arrow = ({
           direction === "right" ? "flex-row-reverse" : "pr-2"
         } items-center px-1 w-12 h-12 transition-all duration-700 ease-in-out`}
         style={{
-          width: 'fit-content',
-          maxWidth: isHovered ? `300px` : '48px',
+          width: "fit-content",
+          maxWidth: isHovered ? `300px` : "48px",
           left: direction === "left" ? `${directionPercentage}%` : "",
           right: direction === "right" ? `${directionPercentage}%` : "",
           top: `${top}%`,
@@ -79,7 +69,9 @@ export const Arrow = ({
         </span>
         <span
           ref={textRef}
-          className={`whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out font-bold ${direction === "left" ? "mr-1" : "ml-1"}`}
+          className={`whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out font-bold ${
+            direction === "left" ? "mr-1" : "ml-1"
+          }`}
         >
           {text}
         </span>

@@ -14,16 +14,16 @@ const arrows: ArrowProps[] = [
 
 const circles: PulsingCircleProps[] = [
   {
-    image: "../assets/hires/signs/mine_safety.png",
+    image: "../assets/hires/signs/fire_safety.png",
     text: "Пожежна безпека",
-    top: 31,
-    left: 32.3,
+    top: 21.5,
+    left: 28.2,
   },
   {
-    image: "/products/jeep",
+    image: "../assets/hires/signs/life_safety.png",
     text: "Безпека життєдіяльності",
-    top: 31.5,
-    left: 68.5,
+    top: 22,
+    left: 69.8,
   },
 ];
 

@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React from "react";
-//  hasBorderBottom ? "border-b text-black" : "text-white"
+
 export const Navbar = ({ hasBorderBottom }: { hasBorderBottom?: boolean }) => {
-  // TODO: Add a border bottom to the navbar if hasBorderBottom is true
   return (
     <nav
       className={`z-20 absolute top-0 left-0 w-full flex items-center justify-between py-6 px-8 text-md font-bold ${
