@@ -33,13 +33,13 @@ const PdfView = ({ file }: { file: string }) => {
       </Document>
       <div className="flex justify-center space-x-4 mt-2">
         <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-          Previous
+          &larr;
         </button>
         <p>
           {pageNumber}/{numPages}
         </p>
         <button onClick={goToNextPage} disabled={pageNumber >= (numPages || 1)}>
-          Next
+          &rarr;
         </button>
       </div>
     </div>
