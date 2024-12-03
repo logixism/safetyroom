@@ -30,6 +30,7 @@ const PdfView = ({ file }: { file: string }) => {
             pageNumber={pageNumber}
             height={900}
             renderAnnotationLayer={false}
+            renderTextLayer={false}
           />
         </Document>
       </div>
