@@ -1,11 +1,13 @@
 "use client";
 
 import { Arrow, ArrowProps } from "@/components/Arrow";
+import Video from "next-video";
 import { PulsingCircle, PulsingCircleProps } from "@/components/PulsingCircle";
 import Images from "@/components/Images";
 import PdfView from "@/components/PdfView";
 let pdf_minefolder = <PdfView file="../assets/files/mines_bluefolder.pdf" />;
 let pdf_premedical = <PdfView file="../assets/files/premedical.pdf" />;
+let pdf_psychological = <PdfView file="../assets/files/psychological.pdf" />;
 let fire_audio: HTMLAudioElement | undefined = undefined;
 
 const arrows: ArrowProps[] = [
@@ -203,6 +205,20 @@ const circles: PulsingCircleProps[] = [
         text: "Домедична папка",
         top: 64.5,
         left: 5,
+        radius: 5,
+    },
+    {
+        content: <>{pdf_psychological}</>,
+        text: "Мінна папка",
+        top: 65.5,
+        left: 40,
+        radius: 5,
+    },
+    {
+        content: <Video src={"../assets/files/gas_mask.mp4"} width={400} />,
+        text: "Gas Mask",
+        top: 66.5,
+        left: 68.5,
         radius: 5,
     },
 ];
