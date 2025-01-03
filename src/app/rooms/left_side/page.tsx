@@ -1,8 +1,12 @@
+"use client";
+
 import { Arrow, ArrowProps } from "@/components/Arrow";
 import { PulsingCircle, PulsingCircleProps } from "@/components/PulsingCircle";
 import Images from "@/components/Images";
 import PdfView from "@/components/PdfView";
 let pdf_minefolder = <PdfView file="../assets/files/mines_bluefolder.pdf" />;
+let pdf_premedical = <PdfView file="../assets/files/premedical.pdf" />;
+let fire_audio: HTMLAudioElement | undefined = undefined;
 
 const arrows: ArrowProps[] = [
     {
@@ -156,6 +160,49 @@ const circles: PulsingCircleProps[] = [
         text: "Мінна папка",
         top: 65.5,
         left: 79,
+        radius: 5,
+    },
+    {
+        content: (
+            <>
+                <div>
+                    {[...Array(3).keys()].map((i) => (
+                        <img
+                            key={i}
+                            src={`../assets/hires/signs/firecars_left_${
+                                i + 1
+                            }.png`}
+                            alt={`Буклет ${i + 1}`}
+                            className="w-full"
+                        />
+                    ))}
+                </div>
+            </>
+        ),
+        onClick: () => {
+            if (!fire_audio) {
+                fire_audio = new Audio("../assets/sounds/emt_alarm.mp3");
+                fire_audio.volume = 0.3;
+            }
+            fire_audio.play();
+        },
+        onClose: () => {
+            if (!fire_audio) {
+                return;
+            }
+            fire_audio.pause();
+            fire_audio.currentTime = 0;
+        },
+        text: "Мінний Бокс",
+        top: 62.5,
+        left: 19,
+        radius: 5,
+    },
+    {
+        content: <>{pdf_premedical}</>,
+        text: "Домедична папка",
+        top: 64.5,
+        left: 5,
         radius: 5,
     },
 ];
