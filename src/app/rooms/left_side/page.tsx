@@ -184,7 +184,7 @@ const circles: PulsingCircleProps[] = [
         onClick: () => {
             if (!fire_audio) {
                 fire_audio = new Audio("../assets/sounds/emt_alarm.mp3");
-                fire_audio.volume = 0.3;
+                fire_audio.volume = 1.5;
             }
             fire_audio.play();
         },
@@ -219,6 +219,13 @@ const circles: PulsingCircleProps[] = [
         text: "Gas Mask",
         top: 66.5,
         left: 68.5,
+        radius: 5,
+    },
+    {
+        content: <Video src={"../assets/files/slinky.mp4"} width={1200} />,
+        text: "Gas Mask",
+        top: 66.5,
+        left: 51.5,
         radius: 5,
     },
 ];
